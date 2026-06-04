@@ -69,16 +69,14 @@ The force-answer prefill (`## Final Response\nThe answer is `) plus 16 max_new_t
 
 Fixing this should push EAR upward; current numbers underestimate verbose-guessing.
 
-## Asks for the advisor meeting
+## Questions I have
 
 1. **Framing of the negative result.** Is 16.7% on MedXpertQA a *publishable finding about the limits of o1-style medical training*, or do we treat it as a setup problem (wrong prompt template, wrong decoding params) to debug first? My read: it's a real finding, but we should confirm by running the same protocol on m1 and (if possible) o1 to see whether the underperformance is HuatuoGPT-specific.
-2. **Next-pilot size.** To get a reliable BIFR, I need ~30 originally-correct items, which means scaling to ~180 raw items. At 22 min / 30 items, that's ~2.2 hours of pod time ≈ $5. Approve?
-3. **Add the paraphrase test?** I can layer it onto the next run cheaply (one extra forward pass per item). Worth doing now or hold for a clean N=200 main run?
 
 ## Next steps (locked in)
 
-- [ ] Fix the parsing issue (bump tokens, expand regex). 30-min change.
+- [ ] Fix the parsing issue (bump tokens, expand regex). 
 - [ ] Re-run N=30 with the fix to confirm EAR_k goes up.
-- [ ] Scale to N≈180 (or N=200) to get a reliable BIFR.
-- [ ] Add paraphrase perturbation (LLM-judged) once advisor signs off.
+- [ ] Scale to  N=200 to get a reliable BIFR.
+- [ ] Add paraphrase perturbation (LLM-judged).
 - [ ] Run m1 on the same items as a comparison point.
