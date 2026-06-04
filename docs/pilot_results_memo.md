@@ -71,7 +71,7 @@ Fixing this should push EAR upward; current numbers underestimate verbose-guessi
 
 ## Questions I have
 
-1. **Framing of the negative result.** Is 16.7% on MedXpertQA a *publishable finding about the limits of o1-style medical training*, or do we treat it as a setup problem (wrong prompt template, wrong decoding params) to debug first? My read: it's a real finding, but we should confirm by running the same protocol on m1 and (if possible) o1 to see whether the underperformance is HuatuoGPT-specific.
+1. **Framing of the negative result.** Is 16.7% on MedXpertQA a *publishable finding about the limits of o1-style medical training*, or do we treat it as a setup problem (wrong prompt template, wrong decoding params) to debug first? 
 
 ## Next steps (locked in)
 
