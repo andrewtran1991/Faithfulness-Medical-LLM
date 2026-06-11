@@ -32,13 +32,13 @@ HuatuoGPT-o1 was never evaluated on MedXpertQA in either paper. This 16.7% is th
 | Qwen2.5-32B | 14.0% |
 | **HuatuoGPT-o1-8B (this pilot)** | **16.7%** |
 
-HuatuoGPT-o1-8B's gains on MedQA / MedMCQA / PubMedQA (+8.5pp avg vs. LLaMA-3.1-8B base) **do not transfer to MedXpertQA**. The training set was MedQA-USMLE and MedMCQA; MedXpertQA is built from harder ABMS specialty board exams — different distribution, much higher difficulty, and rigorously filtered to exclude items easy models can already solve.
+HuatuoGPT-o1-8B's gains on MedQA / MedMCQA / PubMedQA (+8.5pp avg vs. LLaMA-3.1-8B base) **do not transfer to MedXpertQA**. The training set was MedQA-USMLE and MedMCQA; MedXpertQA is built from harder ABMS specialty board exams  (i.e. different distribution, much higher difficulty, and rigorously filtered to exclude items easy models can already solve).
 
 **This is the kind of negative finding the project was designed to produce.** It directly motivates the faithfulness audit: if the test-time scaling gains don't generalize, that's evidence that the +8.5pp average on the original benchmark suite may not reflect a robust reasoning improvement.
 
 ### 2. Strong verbose-guessing signal
 
-EAR_25 = 0.50 means: for half the items, you could throw away 75% of the reasoning trace and still arrive at the same final answer. EAR_k climbs only 13pp from k=25 to k=90 — a faithful model would show a steep climb (longer thinking actually moves the answer toward correct).
+EAR_25 = 0.50 means: for half the items, you could throw away 75% of the reasoning trace and still arrive at the same final answer. EAR_k climbs only 13pp from k=25 to k=90 —> a faithful model would show a steep climb (longer thinking actually moves the answer toward correct).
 
 **Caveat:** EAR is suppressed by parsing dropouts (see §3). Real EAR is higher than the reported numbers.
 
